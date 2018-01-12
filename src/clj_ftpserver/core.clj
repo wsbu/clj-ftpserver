@@ -56,7 +56,19 @@
   ([users server-config]
     (ftp-server (assoc server-config :users users))))
 
+(defn stop
+  "stops server"
+  [server]
+  (.stop server))
+
+(defn start
+  [server]
+  "start server"
+  (.start server))
+
 (defmacro with-ftp-server
+  "Creates a context in which the server is running and listening.
+   Ensures the server is stopped on exit"
   [server & body]
   `(let [server# ~server]
      (try (when (.isStopped server#) (.start server#))

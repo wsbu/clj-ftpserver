@@ -1,14 +1,32 @@
 # clj-ftpserver
 
-A Clojure library designed to ... well, that part is up to you.
+Wrapper over Apache FtpServer
+
 
 ## Usage
 
-FIXME
+[![Clojars Project](https://img.shields.io/clojars/v/clj-ftpserver.svg)](https://clojars.org/clj-ftpserver)
 
-## License
+## Example
 
-Copyright © 2018 FIXME
+From functional code:
+`(require '[clj-ftpserver.core :as ftp])
+(let [server (ftp/ftp-server [{:username "bob" :password "bobisgreat" :home-dir "/bob/ftp"}]
+						      {:port 5555 :ssl true :implicit-ssl true})]
+  (with-ftp-server
+    server
+    (do stuff)))`
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+From REPL:
+`(require '[clj-ftpserver.core :as ftp])
+(def myserver ftp/ftp-server [{:username "bob" :password "bobisgreat" :home-dir "/bob/ftp" :write true}]
+                              {:port 5555 :ssl true})
+(ftp/start myserver)
+;play around with the server with filezilla or something
+(ftp/stop myserver)`
+
+## Definitions
+The ftp-server function accepts two arguments:
+users: a vector of user maps
+	user: a map containing :username, :password, :home-dir, and :write (optional) key-value pairs
+server-config: a map containing :port, :ssl (optional), and :implicit-ssl (optional) key-value pairs
