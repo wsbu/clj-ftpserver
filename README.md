@@ -26,8 +26,8 @@ From REPL:
 
 ```
 (require '[clj-ftpserver.core :as ftp])
-(def myserver ftp/ftp-server [{:username "bob" :password "bobisgreat" :home-dir "/bob/ftp" :write true}]
-                              {:port 5555 :ssl true})
+(def myserver (ftp/ftp-server [{:username "bob" :password "bobisgreat" :home-dir "/bob/ftp" :write true}]
+                              {:port 5555 :ssl true}))
 (ftp/start myserver)
 ;play around with the server with filezilla or something
 (ftp/stop myserver)
