@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
-## [Unreleased]
+## [0.1.1 - 2018-01-19]
 ### Fixed
 - issue with the keystore not being copied out of the library jar properly
 
