@@ -7,7 +7,7 @@ Wrapper over Apache FtpServer
 
 [![Clojars Project](https://img.shields.io/clojars/v/clj-ftpserver.svg)](https://clojars.org/clj-ftpserver)
 <br>
-[![CircleCI](https://circleci.com/gh/komcrad/clj-ftpserver.svg?style=shield&circle-token=272e0d0d795c221f3938c380f8d915bef7eafa1d)](https://circleci.com/gh/komcrad/clj-ftpserver)
+[![CircleCI](https://circleci.com/gh/wsbu/clj-ftpserver.svg?style=svg&circle-token=272e0d0d795c221f3938c380f8d915bef7eafa1d)](https://circleci.com/gh/wsbu/clj-ftpserver)
 
 ## Example
 
