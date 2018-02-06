@@ -4,7 +4,8 @@
            [org.apache.ftpserver.ftplet UserManager Authority]
            [org.apache.ftpserver.usermanager.impl BaseUser WritePermission]
            [org.apache.ftpserver.usermanager PropertiesUserManagerFactory]
-           [org.apache.ftpserver.ssl SslConfigurationFactory SslConfiguration]))
+           [org.apache.ftpserver.ssl SslConfigurationFactory SslConfiguration])
+  (:require [komcrad-utils.io :refer [resource-as-file]]))
 
 (defn users
   [coll]
@@ -45,7 +46,9 @@
       (when (:ssl config)
         (if (:keystore config)
           (.setKeystoreFile ssl (clojure.java.io/file (:keystore config)))
-          (.setKeystoreFile ssl (clojure.java.io/file (clojure.java.io/resource "ftpserver.jks"))))
+          (let [key-store (resource-as-file "ftpserver.jks")]
+            (.setKeystoreFile ssl key-store)
+            (.deleteOnExit key-store)))
         (.setKeystorePassword ssl "password")
         (.setSslConfiguration listener-factory (.createSslConfiguration ssl)))
       (when (:implicit-ssl config)
