@@ -42,3 +42,8 @@ users: a vector of user maps
 user: a map containing :username, :password, :home-dir, and :write (optional) key-value pairs
 
 server-config: a map containing :port, :ssl (optional), and :implicit-ssl (optional) key-value pairs
+
+## Generate your own keystore
+```
+keytool -keyalg RSA -keystore  ftpserver.jks -genkey -alias server -validity 3650
+```
