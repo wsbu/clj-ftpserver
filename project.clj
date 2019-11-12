@@ -1,6 +1,6 @@
 (defproject net.redlion/clj-ftpserver "0.1.1"
   :description "A wrapper around the Apache FtpServer library"
-  :url "https://github.com/komcrad/clj-ftpserver"
+  :url "https://github.com/wsbu/clj-ftpserver"
   :license {:name "GNU Lesser Public License"
             :url "https://www.gnu.org/licenses/lgpl-3.0.en.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
