@@ -1,4 +1,4 @@
-(defproject clj-ftpserver "0.1.1"
+(defproject net.redlion/clj-ftpserver "0.1.1"
   :description "A wrapper around the Apache FtpServer library"
   :url "https://github.com/komcrad/clj-ftpserver"
   :license {:name "GNU Lesser Public License"
